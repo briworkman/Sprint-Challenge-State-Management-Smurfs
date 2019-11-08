@@ -2,8 +2,6 @@ import axios from "axios";
 
 export const START_FETCHING = "START_FETCHING";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
-export const FETCH_FAILURE = "FETCH_FAILURE";
-
 export const CREATING_NEW_SMURF = "CREATING_NEW_SMURF";
 export const CREATE_NEW_SMURF = "CREATE_NEW_SMURF";
 export const ERROR = "ERROR";
@@ -17,7 +15,7 @@ export const fetchSmurfs = () => {
     axios
       .get(`${URL}/get`)
       .then(response => console.log(response))
-      .catch(err => dispatch({ type: FETCH_FAILURE, payload: err }));
+      .catch(err => dispatch({ type: ERROR, payload: err }));
   };
 };
 
